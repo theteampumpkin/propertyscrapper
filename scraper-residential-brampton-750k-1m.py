@@ -148,7 +148,7 @@ def format_whatsapp_post(prop):
 
     disclaimer = (
         "\n"    
-        "_Assumptions based on Current Mortgage Rates and Estimates :_\n"
+        "_*Assumptions based on Current Mortgage Rates and Estimates :*_\n"
         "Purchase Price as is - ${price:,.0f}\n"
         f"Mortgage Rate - {MORTGAGE_RATE*100:.2f}% \n"
         f"{AMORTIZATION_YEARS} year amortization \n"
@@ -156,23 +156,23 @@ def format_whatsapp_post(prop):
     )
     
     first_time_section = f"""
-    Scenario 1 - 🏠 *For First Time Home Buyers*
+*Scenario 1 - 🏠 For First Time Home Buyers*
     - Monthly Mortgage (10% down): ${monthly_payment_10:,.0f}
     - Monthly Property Tax: ${monthly_tax:,.0f}
     - Insurance + Misc: ${monthly_ins_misc:,.0f}
     - 💰Basement rent: ${BASEMENT_RENT:,.0f}   
     👉 Live in this house worth ${price:,.0f} for ${(monthly_payment_10 + monthly_tax + monthly_ins_misc - BASEMENT_RENT):,.0f}/month
-    # ---
-    # """
+    ---------- \n
+    """
     investment_section = f"""
-     Scenario 2 - 💼 *For Investment Buyers*
+*Scenario 2 - 💼 For Investment Buyers*
     - Monthly Mortgage (20% down): ${monthly_payment_20:,.0f}
     - Monthly Property Tax: ${monthly_tax:,.0f}
     - Insurance + Misc: ${monthly_ins_misc:,.0f}
     - 💰 Net Rent: Upstairs 3BR = ${UPSTAIRS_RENT}, Basement 2BR = ${BASEMENT_RENT}
     📈 Get a Monthly Cashflow of : ${cashflow_20:,.0f} from the property
-    # ---
-    # """
+    ---------- \n
+    """
 
     # Add exclusive property details section for soldbyTeamPumpkin clients
     exclusive_section = (
@@ -187,18 +187,16 @@ def format_whatsapp_post(prop):
     )
 
     return f"""{area_line}
-
-    *Property Details*
-    - List Price: ${price:,.0f} | Bedrooms: {prop.get('bedrooms')} | Bathrooms: {prop.get('bathrooms')} | Parking: {prop.get('parking')}
-    - Year Built: {prop.get('yearBuilt')}
-    - Basement: {prop.get('basement_features', '')}
-    - Lot Size: {prop.get('lot_size', '')}
-    - Amenities Nearby: {prop.get('amenities', '')}
-    # {stark_highlights_section}
-    {disclaimer}
-    {first_time_section}
-    {investment_section}
-    {exclusive_section}
+*Property Details*
+- List Price: ${price:,.0f} | Bedrooms: {prop.get('bedrooms')} | Bathrooms: {prop.get('bathrooms')} | Parking: {prop.get('parking')}
+- Year Built: {prop.get('yearBuilt')}
+- Basement: {prop.get('basement_features', '')}
+- Lot Size: {prop.get('lot_size', '')}
+- Amenities Nearby: {prop.get('amenities', '')}
+{disclaimer}
+{first_time_section.strip()}
+{investment_section.strip()}
+{exclusive_section}
     """
 
 # ===== MAIN PIPELINE =====
@@ -221,7 +219,18 @@ if __name__ == "__main__":
     scored.sort(reverse=True, key=lambda x: x[0])
     top_props = [prop for _, prop in scored[:TOP_N]]
 
-    # Output WhatsApp-style posts
+    # Output WhatsApp-style posts and write to file
+    output_lines = []
     for idx, prop in enumerate(top_props, 1):
-        print(f"\n=== Property #{idx} ===")
-        print(format_whatsapp_post(prop))
+        output_lines.append(f"\n=== Property #{idx} ===")
+        output_lines.append(format_whatsapp_post(prop))
+
+    output_text = '\n'.join(output_lines)
+    print(output_text)
+
+    # Write output to file
+    output_dir = r"C:\Users\user\pumpkinScrapper"
+    os.makedirs(output_dir, exist_ok=True)
+    output_file = os.path.join(output_dir, "output.txt")
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(output_text)
