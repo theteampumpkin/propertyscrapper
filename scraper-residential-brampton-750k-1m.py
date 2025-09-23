@@ -152,7 +152,7 @@ def format_whatsapp_post(prop):
         "Purchase Price as is - ${price:,.0f}\n"
         f"Mortgage Rate - {MORTGAGE_RATE*100:.2f}% \n"
         f"{AMORTIZATION_YEARS} year amortization \n"
-        f"Upstairs rent ${UPSTAIRS_RENT}, Basement rent ${BASEMENT_RENT}."
+        f"Upstairs rent ${UPSTAIRS_RENT}, Basement rent ${BASEMENT_RENT}.\n"
     )
     
     first_time_section = f"""
@@ -170,7 +170,7 @@ def format_whatsapp_post(prop):
     - Monthly Property Tax: ${monthly_tax:,.0f}
     - Insurance + Misc: ${monthly_ins_misc:,.0f}
     - 💰 Net Rent: Upstairs 3BR = ${UPSTAIRS_RENT}, Basement 2BR = ${BASEMENT_RENT}
-    📈 Get a Monthly Cashflow of : ${cashflow_20:,.0f} from the property
+    📈 *Get a Monthly Cashflow* of : ${cashflow_20:,.0f} from the property
     ---------- \n
     """
 
