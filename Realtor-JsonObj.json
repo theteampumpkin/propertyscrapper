@@ -1,0 +1,601 @@
+{
+    "HashCode": "1233655731",
+    "Id": "28886016",
+    "MlsNumber": "W12414204",
+    "StatusId": "1",
+    "PublicRemarks": "Absolutely Beautiful  Semi-Detached House! 4+1 Bedrooms With A Separate Entrance For The Basement! Recently Renovated! Lots Of Upgrades! Open Concept Layout! Located In The Most Demanded Area! Close To Grocery Stores, Brampton Library, Schools! Excellent Bus Service! 4 Car Parking On Driveway. Huge  PIE SHAPE Backyard (41300220)",
+    "LastUpdated": "2025-09-19 8:24:55 AM",
+    "Building": {
+      "BathroomTotal": "4",
+      "Bedrooms": "4 + 1",
+      "SizeInterior": "139.3534 m2",
+      "StoriesTotal": "2",
+      "Type": "House",
+      "FloorAreaMeasurements": [
+        {
+          "Area": "1500+ sqft",
+          "AreaUnformatted": "1500-2000 sqft",
+          "Type": "Square Footage",
+          "Source": "",
+          "MeasureUnitId": "1",
+          "TypeId": "1",
+          "SourceId": "0",
+          "SortBy": "1"
+        }
+      ],
+      "HalfBathTotal": "1",
+      "Age": "",
+      "Appliances": "Garage door opener remote(s)",
+      "BasementFeatures": "Apartment in basement, Separate entrance",
+      "BasementType": "N/A",
+      "ConstructionStyleAttachment": "Semi-detached",
+      "CoolingType": "Central air conditioning",
+      "ExteriorFinish": "Brick",
+      "FlooringType": "Laminate, Ceramic",
+      "FoundationType": "Concrete",
+      "HeatingFuel": "Natural gas",
+      "HeatingType": "Forced air (Natural gas)",
+      "Room": [
+        {
+          "Type": "Dining room",
+          "Width": "2.74 m",
+          "Length": "3.02 m",
+          "Level": "Main level",
+          "Dimension": "3.02 m x 2.74 m"
+        },
+        {
+          "Type": "Kitchen",
+          "Width": "3.81 m",
+          "Length": "5.18 m",
+          "Level": "Main level",
+          "Dimension": "5.18 m x 3.81 m"
+        },
+        {
+          "Type": "Primary Bedroom",
+          "Level": "Second level",
+          "Dimension": "Measurements not available"
+        },
+        {
+          "Type": "Bedroom 2",
+          "Width": "2.44 m",
+          "Length": "3.66 m",
+          "Level": "Second level",
+          "Dimension": "3.66 m x 2.44 m"
+        },
+        {
+          "Type": "Bedroom 3",
+          "Width": "2.94 m",
+          "Length": "3.1 m",
+          "Level": "Second level",
+          "Dimension": "3.1 m x 2.94 m"
+        },
+        {
+          "Type": "Bedroom 4",
+          "Width": "2.44 m",
+          "Length": "3.64 m",
+          "Level": "Second level",
+          "Dimension": "3.64 m x 2.44 m"
+        },
+        {
+          "Type": "Living room",
+          "Width": "5.86 m",
+          "Length": "4.04 m",
+          "Level": "Basement",
+          "Dimension": "4.04 m x 5.86 m"
+        },
+        {
+          "Type": "Bedroom",
+          "Width": "3.51 m",
+          "Length": "3.12 m",
+          "Level": "Basement",
+          "Dimension": "3.12 m x 3.51 m"
+        },
+        {
+          "Type": "Bedroom 2",
+          "Width": "3.51 m",
+          "Length": "3.05 m",
+          "Level": "Basement",
+          "Dimension": "3.05 m x 3.51 m"
+        }
+      ],
+      "Water": "Municipal water",
+      "DisplayAsYears": "2",
+      "FireplacePresent": "Yes",
+      "BedroomsAboveGround": "4",
+      "BedroomsBelowGround": "1"
+    },
+    "Land": {
+      "SizeTotal": "22.3 x 130.7 FT|under 1/2 acre",
+      "SizeFrontage": "22 ft ,3 in",
+      "FenceType": "Fenced yard",
+      "SizeDepth": "130 ft ,8 in",
+      "Sewer": "Sanitary sewer"
+    },
+    "Individual": [
+      {
+        "IndividualID": 1736580,
+        "Name": "KULWINDER BRAR",
+        "Organization": {
+          "OrganizationID": 289187,
+          "Name": "RE/MAX GOLD REALTY INC.",
+          "Logo": "https://cdn.realtor.ca/organization/en-CA/TS638851503600000000/lowres/1375388.jpg",
+          "Address": {
+            "AddressText": "2720 NORTH PARK DRIVE #201|BRAMPTON, Ontario L6S0E9",
+            "PermitShowAddress": true
+          },
+          "Phones": [
+            {
+              "PhoneType": "Telephone",
+              "PhoneNumber": "456-1010",
+              "AreaCode": "905",
+              "PhoneTypeId": "1"
+            },
+            {
+              "PhoneType": "Fax",
+              "PhoneNumber": "673-8900",
+              "AreaCode": "905",
+              "PhoneTypeId": "4"
+            }
+          ],
+          "Emails": [
+            {
+              "ContactId": "567618593"
+            }
+          ],
+          "OrganizationType": "Firm",
+          "Designation": "Brokerage",
+          "HasEmail": true,
+          "PermitFreetextEmail": true,
+          "PermitShowListingLink": true,
+          "RelativeDetailsURL": "/office/firm/289187/remax-gold-realty-inc-2720-north-park-drive-201-brampton-ontario-l6s0e9",
+          "PhotoLastupdate": "2025-06-10 11:06:00 AM"
+        },
+        "Phones": [
+          {
+            "PhoneType": "Telephone",
+            "PhoneNumber": "400-9200",
+            "AreaCode": "416",
+            "PhoneTypeId": "1"
+          },
+          {
+            "PhoneType": "Toll Free",
+            "PhoneNumber": "400-9200",
+            "AreaCode": "416",
+            "PhoneTypeId": "5"
+          }
+        ],
+        "Websites": [
+          {
+            "Website": "http://www.kulwinderbrar.com/",
+            "WebsiteTypeId": "1"
+          }
+        ],
+        "Emails": [
+          {
+            "ContactId": "575998038"
+          }
+        ],
+        "Photo": "https://cdn.realtor.ca/individual/TS638851702200000000/lowres/1178046.jpg",
+        "Position": "Broker",
+        "PermitFreetextEmail": true,
+        "FirstName": "KULWINDER",
+        "LastName": "BRAR",
+        "CorporationDisplayTypeId": "0",
+        "PermitShowListingLink": true,
+        "RelativeDetailsURL": "/agent/1736580/kulwinder-brar-2720-north-park-drive-201-brampton-ontario-l6s0e9",
+        "AgentPhotoLastUpdated": "2025-06-10 16:37:00",
+        "PhotoHighRes": "https://cdn.realtor.ca/individual/TS638851702200000000/highres/1178046.jpg",
+        "RankMyAgentKey": "",
+        "RealSatisfiedKey": "",
+        "TestimonialTreeKey": ""
+      },
+      {
+        "IndividualID": 2083145,
+        "Name": "GOLDY DHILLON",
+        "Organization": {
+          "OrganizationID": 289187,
+          "Name": "RE/MAX GOLD REALTY INC.",
+          "Logo": "https://cdn.realtor.ca/organization/en-CA/TS638851503600000000/lowres/1375388.jpg",
+          "Address": {
+            "AddressText": "2720 NORTH PARK DRIVE #201|BRAMPTON, Ontario L6S0E9",
+            "PermitShowAddress": true
+          },
+          "Phones": [
+            {
+              "PhoneType": "Telephone",
+              "PhoneNumber": "456-1010",
+              "AreaCode": "905",
+              "PhoneTypeId": "1"
+            },
+            {
+              "PhoneType": "Fax",
+              "PhoneNumber": "673-8900",
+              "AreaCode": "905",
+              "PhoneTypeId": "4"
+            }
+          ],
+          "Emails": [
+            {
+              "ContactId": "567618593"
+            }
+          ],
+          "OrganizationType": "Firm",
+          "Designation": "Brokerage",
+          "HasEmail": true,
+          "PermitFreetextEmail": true,
+          "PermitShowListingLink": true,
+          "RelativeDetailsURL": "/office/firm/289187/remax-gold-realty-inc-2720-north-park-drive-201-brampton-ontario-l6s0e9",
+          "PhotoLastupdate": "2025-06-10 11:06:00 AM"
+        },
+        "Phones": [
+          {
+            "PhoneType": "Telephone",
+            "PhoneNumber": "456-1010",
+            "AreaCode": "905",
+            "PhoneTypeId": "1"
+          }
+        ],
+        "Emails": [
+          {
+            "ContactId": "576214034"
+          }
+        ],
+        "Photo": "https://cdn.realtor.ca/individual/TS638852292600000000/lowres/1357901.jpg",
+        "Position": "Broker",
+        "PermitFreetextEmail": true,
+        "FirstName": "GOLDY",
+        "LastName": "DHILLON",
+        "CorporationDisplayTypeId": "0",
+        "PermitShowListingLink": true,
+        "RelativeDetailsURL": "/agent/2083145/goldy-dhillon-2720-north-park-drive-201-brampton-ontario-l6s0e9",
+        "AgentPhotoLastUpdated": "2025-06-11 09:01:00",
+        "PhotoHighRes": "https://cdn.realtor.ca/individual/TS638852292600000000/highres/1357901.jpg",
+        "RankMyAgentKey": "",
+        "RealSatisfiedKey": "",
+        "TestimonialTreeKey": ""
+      }
+    ],
+    "Property": {
+      "Price": "$969,800",
+      "Type": "Single Family",
+      "Address": {
+        "AddressText": "68 DEWRIDGE COURT|Brampton (Sandringham-Wellington), Ontario L6R3B9",
+        "Longitude": "-79.7618532",
+        "Latitude": "43.7550751",
+        "CommunityName": "Sandringham-Wellington",
+        "LocalLogicNeighbourHood": "Springdale",
+        "PermitShowAddress": true,
+        "City": "Brampton (Sandringham-Wellington)",
+        "Province": "Ontario",
+        "ProvinceCode": "ON"
+      },
+      "Photo": [
+        {
+          "SequenceId": "1",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_1.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_1.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_1.jpg",
+          "Description": "LEGAL BASEMENT APARTMENT",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "2",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_2.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_2.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_2.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "3",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_3.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_3.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_3.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "4",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_4.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_4.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_4.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "5",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_5.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_5.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_5.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "6",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_6.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_6.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_6.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "7",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_7.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_7.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_7.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "8",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_8.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_8.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_8.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "9",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_9.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_9.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_9.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "10",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_10.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_10.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_10.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "11",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_11.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_11.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_11.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "12",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_12.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_12.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_12.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "13",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_13.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_13.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_13.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "14",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_14.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_14.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_14.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "15",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_15.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_15.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_15.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "16",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_16.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_16.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_16.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "17",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_17.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_17.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_17.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "18",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_18.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_18.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_18.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "19",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_19.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_19.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_19.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "20",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_20.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_20.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_20.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "21",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_21.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_21.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_21.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "22",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_22.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_22.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_22.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "23",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_23.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_23.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_23.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "24",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_24.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_24.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_24.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "25",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_25.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_25.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_25.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "26",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_26.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_26.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_26.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "27",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_27.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_27.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_27.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "28",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_28.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_28.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_28.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "29",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_29.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_29.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_29.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "30",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_30.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_30.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_30.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "31",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_31.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_31.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_31.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "32",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_32.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_32.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_32.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        },
+        {
+          "SequenceId": "33",
+          "HighResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/highres/4/w12414204_33.jpg",
+          "MedResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/medres/4/w12414204_33.jpg",
+          "LowResPath": "https://cdn.realtor.ca/listing/TS638938670957270000/reb82/lowres/4/w12414204_33.jpg",
+          "LastUpdated": "2025-09-19 8:24:55 AM",
+          "TypeId": "0"
+        }
+      ],
+      "Parking": [
+        {
+          "Name": "Attached Garage"
+        },
+        {
+          "Name": "Garage"
+        }
+      ],
+      "ParkingSpaceTotal": "5",
+      "TypeId": "300",
+      "OwnershipType": "Freehold",
+      "AmmenitiesNearBy": "Hospital, Place of Worship, Public Transit, Schools",
+      "OwnershipTypeGroupIds": [
+        1
+      ],
+      "ParkingType": "Attached Garage, Garage",
+      "PriceUnformattedValue": "969800",
+      "ShortValue": "970K",
+      "PriceChangeTimeOnRealtor": "",
+      "PriceChangeTagDateUTC": "12:00:00 AM",
+      "LocationDescription": "Sandalwood Pkwy/Bramalea Rd",
+      "TransactionType": "For sale",
+      "TransactionTypeId": "2",
+      "UtilitiesAvailable": [
+        {
+          "Type": "Cable",
+          "Description": "Installed"
+        },
+        {
+          "Type": "Electricity",
+          "Description": "Installed"
+        },
+        {
+          "Type": "Sewer",
+          "Description": "Installed"
+        }
+      ],
+      "TaxAmount": "$5,545",
+      "UtilityType": "Cable (Installed), Electricity (Installed), Sewer (Installed)"
+    },
+    "UploadedBy": "Toronto Regional Real Estate Board",
+    "Business": {},
+    "RelativeURLEn": "/real-estate/28886016/68-dewridge-court-brampton-sandringham-wellington-sandringham-wellington",
+    "RelativeURLFr": "/immobilier/28886016/68-dewridge-court-brampton-sandringham-wellington",
+    "History": [],
+    "UploadedByWebsite": "http://www.trebhome.com/",
+    "UploadedByAddress": {
+      "AddressText": "1400 Don Mills Road, Toronto, Ontario M3B 3N1",
+      "PermitShowAddress": true
+    },
+    "Media": [],
+    "TimeOnRealtor": "3 days",
+    "IsNewListing": true,
+    "PinchFinancial": "https://realtor.qualifynow.ca/?locale=EN_CA&province=ON&listingId=28886016​&channel=MobileApp",
+    "InsertedDateUTC": "638938814957170000",
+    "Tags": [
+      {
+        "Label": "3 days ago",
+        "HTMLColorCode": "#23A1C0",
+        "ListingTagTypeID": "1"
+      }
+    ]
+  }
