@@ -149,7 +149,7 @@ def format_whatsapp_post(prop):
     disclaimer = (
         "\n"    
         "_*Assumptions based on Current Mortgage Rates and Estimates :*_\n"
-        "Purchase Price as is - ${price:,.0f}\n"
+        f"Purchase Price as is - ${price:,.0f}\n"
         f"Mortgage Rate - {MORTGAGE_RATE*100:.2f}% \n"
         f"{AMORTIZATION_YEARS} year amortization \n"
         f"Upstairs rent ${UPSTAIRS_RENT}, Basement rent ${BASEMENT_RENT}.\n"
