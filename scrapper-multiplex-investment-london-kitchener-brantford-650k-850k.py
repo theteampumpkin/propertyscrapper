@@ -43,7 +43,7 @@ def estimate_cashflow(price, units, city):
     monthly_income = units * avg_rent
     mortgage_principal = price * (1 - DOWN_PAYMENT)
     mortgage_payment = monthly_mortgage(mortgage_principal)
-    expenses = (price * 0.01) / 12
+    expenses = (price * 0.02) / 12
     cashflow = monthly_income - (mortgage_payment + expenses)
 
     return {
@@ -88,6 +88,20 @@ def format_property(item):
     # Remove any MLS ID in parentheses, e.g., (12345678) or (ABC12345)
     remarks = re.sub(r"\([A-Za-z0-9]+\)", "", remarks)
     remarks = remarks.strip()
+    # Remove any phrase containing 'Welcome to [address]' even if not at the very start
+    remarks = re.sub(r"\bWelcome to [^\n.?!]*[\n.?!-]+", "", remarks, flags=re.IGNORECASE)
+
+    # Summarize remarks: take first sentence and highlight keywords
+    summary_remarks = ""
+    if remarks:
+        # Extract first sentence
+        first_sentence = remarks.split(".")[0].strip()
+        # Highlight keywords if present
+        keywords = ["income", "rent", "investment", "cashflow", "tenant", "legal", "triplex", "duplex", "multiplex"]
+        for kw in keywords:
+            if kw in first_sentence.lower():
+                first_sentence = re.sub(f"(?i)({kw})", r"*\1*", first_sentence)
+        summary_remarks = first_sentence + "."
 
     cf = estimate_cashflow(price, units, city)
     if not cf:
@@ -98,7 +112,7 @@ def format_property(item):
             f"🏠 {prop_type.title()} | {price} | 📍{city} - {community}\n"
             f"✅ {units} units | {beds} beds | {baths} baths\n"
             f"💰 Est. Income: ${cf['income']:,}/mo | 🏦 Mortgage: ${cf['mortgage']:,}/mo | 📉 Expenses: ${cf['expenses']:,}/mo | 📈 Cashflow: ${cf['cashflow']:,}/mo\n"
-            + (f"💬 {remarks}\n" if remarks else "")
+                + (f"💬 {summary_remarks}\n" if summary_remarks else "")
         ),
         "cashflow": cf['cashflow'],
         "city": city
@@ -114,18 +128,24 @@ def prepare_whatsapp_message():
     listings = fetch_dataset(DATASET_ID)
     city_groups = {}
 
-    # Group listings by city
+    # Group listings by city, only include cashflow > $500
     for item in listings:
         prop = format_property(item)
-        if prop:
+        if prop and prop["cashflow"] > 500:
             city_groups.setdefault(prop["city"], []).append(prop)
 
     message = "🔥 Top Investment Opportunities 🔥\n\n"
 
-    # For each city, take top 3 by cashflow
-    for city, props in city_groups.items():
+    # Define preferred city order
+    preferred_order = ["London", "Kitchener", "Brantford"]
+    # Sort cities: preferred first, then others alphabetically
+    sorted_cities = preferred_order + sorted([c for c in city_groups if c not in preferred_order])
+
+    for city in sorted_cities:
+        if city not in city_groups:
+            continue
         message += f"📍 {city}\n"
-        top_props = sorted(props, key=lambda x: x["cashflow"], reverse=True)[:4]
+        top_props = sorted(city_groups[city], key=lambda x: x["cashflow"], reverse=True)[:4]
         for i, p in enumerate(top_props, start=1):
             message += f"{i}️⃣ {p['text']}\n"
 
