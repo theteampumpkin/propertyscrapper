@@ -127,7 +127,7 @@ def format_whatsapp_post(prop):
     cashflow_20 = total_rent - (monthly_payment_20 + monthly_tax + monthly_utilities + monthly_ins_misc)
     
     area_text = prop.get('area', '')
-    area_line = f"🏡 *Investment Opportunity in {area_text}*" if area_text else "🏡 *Investment Opportunity*"
+    area_line = f"🔥 *Investment Opportunity in {area_text}*" if area_text else "🔥 *Investment Opportunity*"
 
     # Extract highlights
     amenities = prop.get('amenities', '')
@@ -147,64 +147,57 @@ def format_whatsapp_post(prop):
         stark_highlights_section = f"\n---\n*Property Stark Highlights*\n{highlights_text}\n---\n"
 
     disclaimer = (
-        "\n\n"
-        
-        "Disclaimer"
-        ""
-        "r: Calculations assume buy price as listed, "
-        f"mortgage rate of {MORTGAGE_RATE*100:.2f}%, "
-        f"{AMORTIZATION_YEARS} year amortization, "
-        f"upstairs rent ${UPSTAIRS_RENT}, basement rent ${BASEMENT_RENT}."
+        "\n"    
+        "_Assumptions based on Current Mortgage Rates and Estimates :_\n"
+        "Purchase Price as is - ${price:,.0f}\n"
+        f"Mortgage Rate - {MORTGAGE_RATE*100:.2f}% \n"
+        f"{AMORTIZATION_YEARS} year amortization \n"
+        f"Upstairs rent ${UPSTAIRS_RENT}, Basement rent ${BASEMENT_RENT}."
     )
     
     first_time_section = f"""
-    #
-    🏠 *For First Time Home Buyers*
-        💰 Mortgage (10% down): ${monthly_payment_10:,.0f}
-        🏦 Monthly Property Tax: ${monthly_tax:,.0f}
-        💵️ Insurance + Misc: ${monthly_ins_misc:,.0f}
-        💰💰Basement rent: ${BASEMENT_RENT:,.0f}  
-   
-    👉 Live in this house for ${(monthly_payment_10 + monthly_tax + monthly_ins_misc - BASEMENT_RENT):,.0f}/mo
-        (Mortgage + Property Tax + Insurance & Misc - Basement Rent)
+    Scenario 1 - 🏠 *For First Time Home Buyers*
+    - Monthly Mortgage (10% down): ${monthly_payment_10:,.0f}
+    - Monthly Property Tax: ${monthly_tax:,.0f}
+    - Insurance + Misc: ${monthly_ins_misc:,.0f}
+    - 💰Basement rent: ${BASEMENT_RENT:,.0f}   
+    👉 Live in this house worth ${price:,.0f} for ${(monthly_payment_10 + monthly_tax + monthly_ins_misc - BASEMENT_RENT):,.0f}/month
     # ---
     # """
     investment_section = f"""
-    ---
-    💼 *For Investment Buyers*
-    💰 Mortgage (20% down): ${monthly_payment_20:,.0f}
-    💵 Rent: Upstairs 3BR = ${UPSTAIRS_RENT}, Basement 2BR = ${BASEMENT_RENT}
-    🏦 Monthly Property Tax: ${monthly_tax:,.0f}
-    💵️ Insurance + Misc: ${monthly_ins_misc:,.0f}
-    📈 Monthly Cashflow: ${cashflow_20:,.0f}
+     Scenario 2 - 💼 *For Investment Buyers*
+    - Monthly Mortgage (20% down): ${monthly_payment_20:,.0f}
+    - Monthly Property Tax: ${monthly_tax:,.0f}
+    - Insurance + Misc: ${monthly_ins_misc:,.0f}
+    - 💰 Net Rent: Upstairs 3BR = ${UPSTAIRS_RENT}, Basement 2BR = ${BASEMENT_RENT}
+    📈 Get a Monthly Cashflow of : ${cashflow_20:,.0f} from the property
     # ---
     # """
 
-    # ...existing code...
     # Add exclusive property details section for soldbyTeamPumpkin clients
     exclusive_section = (
         "\n\n"
         "📞 *Contact Details*\n"
-        "To get PreApproved for these deals reach out to Preet from DominionLending\n"
+        "To get PreApproved for these deals reach out to Preet (Mortgage Agent) from DLC Keystone\n"
         "DM -> +1(905)462-6007\n"
         "\n\n"
-        "📩 *Property details exclusive for soldbyTeamPumpkin clients*\n"
+        "📩 *Property details exclusive for soldbyTeamPumpkin clients, DM for more information*\n"
         "DM -> +1(437)318-8126\n"
         "\n"
     )
 
     return f"""{area_line}
 
-    {stark_highlights_section}
-    💲 Price: ${price:,.0f}
-    🛏 Bedrooms: {prop.get('bedrooms')}
-    � Bathrooms: {prop.get('bathrooms')}
-    🚗 Parking: {prop.get('parking')}
-    📅 Year Built: {prop.get('yearBuilt')}
-
+    *Property Details*
+    - List Price: ${price:,.0f} | Bedrooms: {prop.get('bedrooms')} | Bathrooms: {prop.get('bathrooms')} | Parking: {prop.get('parking')}
+    - Year Built: {prop.get('yearBuilt')}
+    - Basement: {prop.get('basement_features', '')}
+    - Lot Size: {prop.get('lot_size', '')}
+    - Amenities Nearby: {prop.get('amenities', '')}
+    # {stark_highlights_section}
+    {disclaimer}
     {first_time_section}
     {investment_section}
-    {disclaimer}
     {exclusive_section}
     """
 
