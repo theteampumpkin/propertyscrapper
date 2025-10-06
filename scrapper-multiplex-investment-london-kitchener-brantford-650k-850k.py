@@ -3,7 +3,7 @@ import requests
 
 # === CONFIG ===
 APIFY_TOKEN = os.getenv("APIFY_TOKEN")  # set with: export APIFY_TOKEN="your-token"
-DATASET_ID = "e0ZL4PDMfMJR4nEgt"  # now a single dataset
+DATASET_ID = "QNCEnR4UqDtAUB2GE"  # now a single dataset
 
 MORTGAGE_RATE = 0.04   # 4% mortgage rate
 DOWN_PAYMENT = 0.20    # 20% down
@@ -59,7 +59,6 @@ def format_property(item):
     property_info = item.get("Property", {})
     address_info = property_info.get("Address", {})
 
-    # Use City, fallback to Municipality, fallback to Unknown
     city = address_info.get("City") or address_info.get("Municipality") or "Unknown"
 
     prop_type = building.get("Type", "")
@@ -71,32 +70,30 @@ def format_property(item):
     if prop_type_norm not in valid_types:
         return None
 
-    # Use LocalLogicNeighbourHood, fallback to Subdivision, fallback to Province, fallback to Unknown Area
-    community = address_info.get("LocalLogicNeighbourHood") or address_info.get("Subdivision") or address_info.get("Province") or "Unknown Area"
+    community = (
+        address_info.get("LocalLogicNeighbourHood")
+        or address_info.get("Subdivision")
+        or address_info.get("Province")
+        or "Unknown Area"
+    )
 
     price = property_info.get("Price", "N/A")
     units = building.get("TotalUnits", building.get("UnitTotal", "N/A"))
     beds = building.get("Bedrooms", "N/A")
     baths = building.get("BathroomTotal", "N/A")
+
     import re
     remarks = item.get("PublicRemarks", "")
-    # Remove property address (if present) and any MLS ID (e.g., (12345678) or similar)
     address_text = address_info.get("AddressText", "")
     if address_text:
-        # Remove address text from remarks (case-insensitive)
         remarks = re.sub(re.escape(address_text), "", remarks, flags=re.IGNORECASE)
-    # Remove any MLS ID in parentheses, e.g., (12345678) or (ABC12345)
     remarks = re.sub(r"\([A-Za-z0-9]+\)", "", remarks)
     remarks = remarks.strip()
-    # Remove any phrase containing 'Welcome to [address]' even if not at the very start
     remarks = re.sub(r"\bWelcome to [^\n.?!]*[\n.?!-]+", "", remarks, flags=re.IGNORECASE)
 
-    # Summarize remarks: take first sentence and highlight keywords
     summary_remarks = ""
     if remarks:
-        # Extract first sentence
         first_sentence = remarks.split(".")[0].strip()
-        # Highlight keywords if present
         keywords = ["income", "rent", "investment", "cashflow", "tenant", "legal", "triplex", "duplex", "multiplex"]
         for kw in keywords:
             if kw in first_sentence.lower():
@@ -111,8 +108,9 @@ def format_property(item):
         "text": (
             f"🏠 {prop_type.title()} | {price} | 📍{city} - {community}\n"
             f"✅ {units} units | {beds} beds | {baths} baths\n"
-            f"💰 Est. Income: ${cf['income']:,}/mo | 🏦 Mortgage: ${cf['mortgage']:,}/mo | 📉 Expenses: ${cf['expenses']:,}/mo | 📈 Cashflow: ${cf['cashflow']:,}/mo\n"
-                + (f"💬 {summary_remarks}\n" if summary_remarks else "")
+            f"💰 Est. Income: ${cf['income']:,}/mo | 🏦 Mortgage: ${cf['mortgage']:,}/mo | "
+            f"📉 Expenses: ${cf['expenses']:,}/mo | 📈 Cashflow: ${cf['cashflow']:,}/mo\n"
+            + (f"💬 {summary_remarks}\n" if summary_remarks else "")
         ),
         "cashflow": cf['cashflow'],
         "city": city
@@ -128,7 +126,6 @@ def prepare_whatsapp_message():
     listings = fetch_dataset(DATASET_ID)
     city_groups = {}
 
-    # Group listings by city, only include cashflow > $500
     for item in listings:
         prop = format_property(item)
         if prop and prop["cashflow"] > 500:
@@ -136,9 +133,7 @@ def prepare_whatsapp_message():
 
     message = "🔥 Top Investment Opportunities 🔥\n\n"
 
-    # Define preferred city order
     preferred_order = ["London", "Kitchener", "Brantford"]
-    # Sort cities: preferred first, then others alphabetically
     sorted_cities = preferred_order + sorted([c for c in city_groups if c not in preferred_order])
 
     for city in sorted_cities:
@@ -150,6 +145,20 @@ def prepare_whatsapp_message():
             message += f"{i}️⃣ {p['text']}\n"
 
     message += "📲 Reply *INVEST* to get full details & cashflow analysis."
+
+    # === Add Exclusive Section ===
+    exclusive_section = (
+        "\n\n"
+        "📞 *Contact Details*\n"
+        "To get PreApproved for these deals reach out to Preet (Mortgage Agent) from DLC Keystone\n"
+        "DM -> +1(905)462-6007\n"
+        "\n\n"
+        "📩 *Property details exclusive for soldbyTeamPumpkin clients, DM for more information*\n"
+        "DM -> +1(437)318-8126\n"
+        "\n"
+    )
+    message += exclusive_section
+
     return message
 
 
