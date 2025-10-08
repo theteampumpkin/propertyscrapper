@@ -3,7 +3,7 @@ import requests
 
 # === CONFIG ===
 APIFY_TOKEN = os.getenv("APIFY_TOKEN")  # set with: export APIFY_TOKEN="your-token"
-DATASET_ID = "QNCEnR4UqDtAUB2GE"  # now a single dataset
+DATASET_ID = "8kqlg2ETJx08NDuUx"  # now a single dataset
 
 MORTGAGE_RATE = 0.04   # 4% mortgage rate
 DOWN_PAYMENT = 0.20    # 20% down
@@ -104,22 +104,47 @@ def format_property(item):
     if not cf:
         return None
 
-    summary = {
-        "text": (
-            f"🏠 {prop_type.title()} | {price} | 📍{city} - {community}\n"
-            f"✅ {units} units | {beds} beds | {baths} baths\n"
-            f"💰 Est. Income: ${cf['income']:,}/mo | 🏦 Mortgage: ${cf['mortgage']:,}/mo | "
-            f"📉 Expenses: ${cf['expenses']:,}/mo | 📈 Cashflow: ${cf['cashflow']:,}/mo\n"
-            + (f"💬 {summary_remarks}\n" if summary_remarks else "")
-        ),
+    # WhatsApp-style message format
+    area_line = f"🔥 *Investment Opportunity in {city} - {community}*"
+    property_details = (
+        f"*Property Details*\n"
+        f"- List Price: {price} | Units: {units} | Bedrooms: {beds} | Bathrooms: {baths}\n"
+        f"- Type: {prop_type.title()}\n"
+        ##f"- Address: {address_text}\n"
+    )
+
+    scenario = f"""
+*💼 Opportunity For Investment Buyers*
+    - Monthly Mortgage (20% down): ${cf['mortgage']:,}
+    - Monthly Property Tax: ${cf['expenses']:,}
+    - Est. Income: ${cf['income']:,}/mo
+    📈 *Get a Monthly Cashflow* of : ${cf['cashflow']:,}/mo from the property"
+    """
+    disclaimer = (
+        "\n"
+        "_*Assumptions based on Current Mortgage Rates and Estimates :*_\n"
+        f"Purchase Price as is - {price}\n"
+        f"Mortgage Rate - {MORTGAGE_RATE*100:.2f}%\n"
+        f"{AMORT_YEARS} year amortization\n"
+        f"Average rent per unit: ${AVG_RENT_MAP.get(city, 1500)}.\n"
+    )
+    summary_remarks_section = f"💬 {summary_remarks}\n" if summary_remarks else ""
+    exclusive_section = (
+        "\n\n"
+        "📞 *Contact Details*\n"
+        "To get PreApproved for these deals reach out to Preet (Mortgage Agent) from DLC Keystone\n"
+        "DM -> +1(905)462-6007\n"
+        "\n\n"
+        "📩 *Property details exclusive for soldbyTeamPumpkin clients, DM for more information*\n"
+        "DM -> +1(437)318-8126\n"
+        "\n"
+    )
+    text = f"{area_line}\n{property_details}{disclaimer}{scenario}\n{summary_remarks_section}{exclusive_section}"
+    return {
+        "text": text,
         "cashflow": cf['cashflow'],
         "city": city
     }
-
-    if any(word in remarks.lower() for word in ["income", "rent", "cashflow"]):
-        summary["text"] += "💡 Strong rental income potential\n"
-
-    return summary
 
 
 def prepare_whatsapp_message():
@@ -139,20 +164,20 @@ def prepare_whatsapp_message():
     for city in sorted_cities:
         if city not in city_groups:
             continue
-        message += f"📍 {city}\n"
+       ## message += f"📍 {city}\n"
         top_props = sorted(city_groups[city], key=lambda x: x["cashflow"], reverse=True)[:4]
         for i, p in enumerate(top_props, start=1):
-            message += f"{i}️⃣ {p['text']}\n"
+            message += f"{p['text']}\n"
 
     message += "📲 Reply *INVEST* to get full details & cashflow analysis."
 
     # === Add Exclusive Section ===
     exclusive_section = (
-        "\n\n"
+        "\n"
         "📞 *Contact Details*\n"
         "To get PreApproved for these deals reach out to Preet (Mortgage Agent) from DLC Keystone\n"
         "DM -> +1(905)462-6007\n"
-        "\n\n"
+        "\n"
         "📩 *Property details exclusive for soldbyTeamPumpkin clients, DM for more information*\n"
         "DM -> +1(437)318-8126\n"
         "\n"
@@ -166,5 +191,8 @@ if __name__ == "__main__":
     whatsapp_post = prepare_whatsapp_message()
     print("\n" + whatsapp_post + "\n")
 
-    with open("multiplex_top_investment_message.txt", "w") as f:
+    output_dir = r"C:\Users\user\pumpkinScrapper"
+    os.makedirs(output_dir, exist_ok=True)
+    output_file = os.path.join(output_dir, "output.txt")
+    with open(output_file, "w", encoding="utf-8") as f:
         f.write(whatsapp_post)
