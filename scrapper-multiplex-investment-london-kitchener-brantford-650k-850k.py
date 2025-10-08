@@ -118,7 +118,7 @@ def format_property(item):
     scenario = f"""
 *💼 Opportunity For Investment Buyers*
     - Monthly Mortgage (20% down): ${cf['mortgage']:,}
-    - Monthly Property Tax: ${cf['expenses']:,}
+    - Monthly Expenses: ${cf['expenses']:,}
     - Est. Income: ${cf['income']:,}/mo
     📈 *Get a Monthly Cashflow* of : ${cf['cashflow']:,}/mo from the property"
     """
