@@ -58,6 +58,7 @@ def format_property(item):
     building = item.get("Building", {})
     property_info = item.get("Property", {})
     address_info = property_info.get("Address", {})
+    ameneties = property_info.get("AmmenitiesNearBy", [])
 
     city = address_info.get("City") or address_info.get("Municipality") or "Unknown"
 
@@ -110,6 +111,7 @@ def format_property(item):
         f"*Property Details*\n"
         f"- List Price: {price} | Units: {units} | Bedrooms: {beds} | Bathrooms: {baths}\n"
         f"- Type: {prop_type.title()}\n"
+        f"- Ameneties Nearby: {ameneties}\n"
         ##f"- Address: {address_text}\n"
     )
 
