@@ -130,11 +130,17 @@ def fetch_dataset():
         print("⚠️ Response is not valid JSON. Here's the raw text:")
         print(response.text)
     
-    return {
-        "listngs_london": json_data_london,
-        "listings_kwc": json_data_kwc,
-        "listings_brantford": json_data_brantford
-        }
+    all_listings = json_data_london['Results']
+    all_listings.extend(json_data_kwc['Results'])
+    all_listings.extend(json_data_brantford['Results'])
+
+    return all_listings
+
+    # return {
+    #     "listings_london": json_data_london,
+    #     "listings_kwc": json_data_kwc,
+    #     "listings_brantford": json_data_brantford
+    #     }
 
 
 def monthly_mortgage(principal, annual_rate=MORTGAGE_RATE, years=AMORT_YEARS):
@@ -296,13 +302,13 @@ def format_property(item):
     }
 
 def prepare_whatsapp_message():
-    all_listings = []
-    listings = fetch_dataset()
+    # all_listings = []
+    all_listings = fetch_dataset()
     city_groups = {}
 
-    all_listings = listings['listngs_london']['Results']
-    all_listings.extend(listings['listings_kwc']['Results'])
-    all_listings.extend(listings['listings_brantford']['Results'])
+    # all_listings = listings['listings_london']['Results']
+    # all_listings.extend(listings['listings_kwc']['Results'])
+    # all_listings.extend(listings['listings_brantford']['Results'])
 
     
     for item in all_listings:

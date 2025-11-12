@@ -34,7 +34,7 @@ cookies = {
     "reese84": "cookie"   # replace with your actual cookie value
 }
 
-data = {
+dataBrampton = {
     "ZoomLevel": "10",
     "LatitudeMax": "43.96034",
     "LongitudeMax": "-79.13541",
@@ -60,20 +60,89 @@ data = {
     "CurrentPage": "1"
 }
 
+dataMississauga = {
+     "ZoomLevel": "10",
+    "LatitudeMax": "43.84197",
+    "LongitudeMax": "-79.04244",
+    "LatitudeMin": "43.36963",
+    "LongitudeMin": "-80.29077",
+    "Sort": "6-D",
+    "PropertyTypeGroupID": "1",
+    "TransactionTypeId": "2",
+    "PropertySearchTypeId": "1",
+    "PriceMin": "700000",
+    "PriceMax": "1000000",
+    "BedRange": "4-0",
+    "BathRange": "3-0",
+    "BuildingTypeId": "1",
+    "ConstructionStyleId": "3",
+    "Keywords": "Legal BASEMENT",
+    "Currency": "CAD",
+    "IncludeHiddenListings": "false",
+    "RecordsPerPage": "100",
+    "ApplicationId": "1",
+    "CultureId": "1",
+    "Version": "7.0",
+    "CurrentPage": "1"
+}
+
+dataCaledon = {
+    "ZoomLevel": "10",
+    "LatitudeMax": "44.06735",
+    "LongitudeMax": "-79.29531",
+    "LatitudeMin": "43.59679",
+    "LongitudeMin": "-80.54363",
+    "Sort": "6-D",
+    "PropertyTypeGroupID": "1",
+    "TransactionTypeId": "2",
+    "PropertySearchTypeId": "1",
+    "PriceMin": "700000",
+    "PriceMax": "1000000",
+    "BedRange": "4-0",
+    "BathRange": "3-0",
+    "BuildingTypeId": "1",
+    "ConstructionStyleId": "3",
+    "Keywords": "Legal BASEMENT",
+    "Currency": "CAD",
+    "IncludeHiddenListings": "false",
+    "RecordsPerPage": "100",
+    "ApplicationId": "1",
+    "CultureId": "1",
+    "Version": "7.0",
+    "CurrentPage": "1"
+}
 
 
 # ===== STEP 1. Fetch Latest Dataset from Apify =====
 def fetch_latest_properties():
-    response = requests.post(url, headers=headers, cookies=cookies, data=data)
     try:
-        json_data = response.json()
+        all_listings = []
+        responseBrampton = requests.post(url, headers=headers, cookies=cookies, data=dataBrampton)
+        json_data_brampton = responseBrampton.json()
+
+        responseMississauga = requests.post(url, headers=headers, cookies=cookies, data=dataMississauga)
+        json_data_mississauga = responseMississauga.json()
+
+        responseCaledon = requests.post(url, headers=headers, cookies=cookies, data=dataCaledon)
+        json_data_caledon = responseCaledon.json()
+
         print("✅ JSON response received:")
-        print(json_data)
+
     except ValueError:
         print("⚠️ Response is not valid JSON. Here's the raw text:")
         print(response.text)
     
-    return json_data
+    all_listings = json_data_brampton['Results']
+    all_listings.extend(json_data_mississauga['Results'])
+    all_listings.extend(json_data_caledon['Results'])
+    
+    return all_listings
+    
+    # return {
+    #     "listngs_london": json_data_london,
+    #     "listings_kwc": json_data_kwc,
+    #     "listings_brantford": json_data_brantford
+    #     }
 
 # ===== STEP 2. Mortgage Helper Functions =====
 def cmhc_premium_rate(downpayment_percent):
@@ -133,10 +202,9 @@ def parse_bedrooms(bedroom_str):
 
 def filter_properties(data):
     """Filter properties meeting specific conditions from the Realtor JSON file."""
-    results = data.get("Results", [])
     filtered = []
 
-    for prop in results:
+    for prop in data:
         try:
             building = prop.get("Building", {})
             property_info = prop.get("Property", {})
