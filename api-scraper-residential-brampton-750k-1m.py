@@ -36,10 +36,10 @@ cookies = {
 
 dataBrampton = {
     "ZoomLevel": "10",
-    "LatitudeMax": "43.96034",
-    "LongitudeMax": "-79.13541",
-    "LatitudeMin": "43.48894",
-    "LongitudeMin": "-80.38373",
+    "LatitudeMax": "43.84110",
+    "LongitudeMax": "-79.42030",
+    "LatitudeMin": "43.60539",
+    "LongitudeMin": "-80.04446",
     "Sort": "6-D",
     "PropertyTypeGroupID": "1",
     "TransactionTypeId": "2",
@@ -88,10 +88,10 @@ dataMississauga = {
 
 dataCaledon = {
     "ZoomLevel": "10",
-    "LatitudeMax": "44.06735",
-    "LongitudeMax": "-79.29531",
-    "LatitudeMin": "43.59679",
-    "LongitudeMin": "-80.54363",
+    "LatitudeMax": "43.94437",
+    "LongitudeMax": "-79.64543",
+    "LatitudeMin": "43.70907",
+    "LongitudeMin": "-80.26959",
     "Sort": "6-D",
     "PropertyTypeGroupID": "1",
     "TransactionTypeId": "2",
